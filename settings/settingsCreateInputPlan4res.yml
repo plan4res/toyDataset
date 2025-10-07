@@ -1,7 +1,6 @@
 ##############################################################################
-# inputs for creating the plan4res dataset from IAMC inputs
+# inputs for creating the plan4res dataset out of IAMC data
 ##############################################################################
-
 # list of different scenarios and years (eg. from GENeSYS-MOD results) for which we want to create a dataset
 scenarios: ['LoR_Madrid_Cooking']
 years: [2045]
@@ -22,13 +21,33 @@ partition:
 technos: # list of technologies and link to modelling in plan4res
 # thermal= modelled as ThermalUnit (TU), reservoir= modelled as HydroUnit (SS), 
 # hydrostorage/battery=modelled as ShortTermStorage (STS), res/runofriver=modelled as IntermittentUnit (RES)
-    thermal: ['Biomass|w/o CCS','Coal|Hard coal|w/o CCS','Coal|Lignite|w/o CCS','Gas|CCGT|w/o CCS','Gas|OCGT|w/o CCS','Nuclear','Oil|w/o CCS']
-    reservoir: ['Hydro|Reservoir']
-    hydrostorage: ['Hydro|Pumped Storage']
-    battery: ['Battery|Lithium-Ion']
-    res: ['Solar|PV|Rooftop|Commercial','Solar|PV|Utility|Average','Solar|PV|Utility|Inf','Solar|PV|Utility|Opt','Wind|Onshore|Avg','Wind|Onshore|Opt', 'Wind|Offshore|Deep','Wind|Offshore|Shallow','Wind|Offshore|Transitional']
-    runofriver: ['Hydro|Run of River'] 
-    
+    thermal: 
+        - 'Electricity|Biomass|w/o CCS'
+        - 'Electricity|Coal|Hard coal|w/o CCS'
+        - 'Electricity|Coal|Lignite|w/o CCS'
+        - 'Electricity|Gas|CCGT|w/o CCS'
+        - 'Electricity|Gas|OCGT|w/o CCS'
+        - 'Electricity|Nuclear'
+        - 'Electricity|Oil|w/o CCS'
+    reservoir: 
+        - 'Hydro|Reservoir'
+    hydrostorage: 
+        - 'Hydro|Pumped Storage'
+    battery: 
+        - 'Battery|Lithium-Ion'
+    res: 
+        - 'Solar|PV|Rooftop|Commercial'
+        - 'Solar|PV|Utility|Average'
+        - 'Solar|PV|Utility|Inf'
+        - 'Solar|PV|Utility|Opt'
+        - 'Wind|Onshore|Avg'
+        - 'Wind|Onshore|Opt'
+        - 'Wind|Offshore|Deep'
+        - 'Wind|Offshore|Shallow'
+        - 'Wind|Offshore|Transitional'
+    runofriver: 
+        - 'Hydro|Run of River'
+
 # list of the names of the scenarised timeseries for scenarised data 
 # if using plan4res scenarised data, they are named from the meteorological year
 # that was used for their creation
@@ -72,11 +91,11 @@ CouplingConstraints: # MaxPower and variable cost to use for creating slack unit
 
 # list of parameters for treating the data
 ParametersCreate:
-    invest: no # yes: create a dataset for the Capacity Expansion model
+    invest: yes
     zerocapacity: 1.0  # capacity in MW under which it is considered to be 0
     DynamicConstraints: no  # if 'no' the dataset will not include dynamic constraints: MinPower is set to 0, StartUpCost, MinUp and Down duration are not used
     reservoir:
-        coordinated: True # DO NOT CHANGE True if you wish to optimise all reservoirs in a coordinated way, False elsewhere
+        coordinated: True # DONOTCHANGE True if you wish to optimise all reservoirs in a coordinated way, False elsewhere
         minpowerMWh: 1  # if the volume of the reservoir is lower, converted to short term storage
     InitialFillingrate:  # initial filling rates of reservoirs per countries
         Mordor : 0.5
@@ -97,10 +116,19 @@ ParametersCreate:
         Hydro|Reservoir: 2000
     CapacityExpansion: # define capacity expansion dataset - list of technos which can be invested
         thermal: 
-        hydrostorage:
+            Nuclear:  
+                MaxAdd: 30000
+                MaxRet: 0
         battery:
-        res: 
+            Battery|Lithium-Ion:  
+                MaxAdd: 15000
+                MaxRet: 0
+                InvestmentCost: 100
         interconnections: # either define the share of maxcapacity which can be added or a list of lines with max added capacity
+            Share:  
+                MaxAdd: 0
+                MaxRet: 0 
+            InvestmentCost: 100
     conversiondollar2010euro2020: 0.978  # should be the same value than the one used below
     conversions:
         'Mt CO2/PJ':
@@ -120,7 +148,12 @@ ParametersCreate:
         'MEUR_2020/PJ':
             to: 'MEUR/PJ'
             factor: 1
+        'EUR_2020/GJ':
+            to: 'EUR/GJ'
+            factor: 1   
         'MEUR/PJ':
+            to: 'EUR/MWh'
+        'EUR/GJ':
             to: 'EUR/MWh'
         'USD_2010/kW/yr':
             to: 'EUR/MW/yr'
@@ -139,6 +172,10 @@ ParametersCreate:
             factor: 0.978
         'Mt CO2/yr':
             to: 't CO2/yr'
+        'Mt CO2':
+            to: 't CO2'
+        'PJ/GW':
+            to: 'MWh/MW'
         'million EUR/GW':
             to: 'EUR/MW'
         'EUR_2020/kW':
@@ -155,6 +192,7 @@ ParametersCreate:
         fuel:  # in the case of 'Price', gives the name of the correspondent fuel for which the price should be used
             Gas|Hydrogen|OCGT|w/o CHP: Gas|Hydrogen
             Gas|Hydrogen|CCGT|w/o CHP: Gas|Hydrogen
+ 
 
 # the datagroup section lists the different 'sources' to get the data
 # for each source:
@@ -173,11 +211,11 @@ ParametersCreate:
 #	for each group, variables are separated into 3 categories, depending on the method to use for aggregating regions (add, global ie single value, mean)
 # a different group must be given for annual and subannual data
 
+#listdatagroups: ['genesys1','genesys2','ehighway','entsoe']
 listdatagroups: ['genesys_jl']
 
 datagroups:
     genesys_jl:  # here the group with data from Open Entrance Scenario
-        #inputdata: 'IAMC_Middleeast_Gondor.xlsx' 
         model: 'GENeSYS-MOD 3.2'
         regions:
             global: 'World'  # region to be used for global data
@@ -190,9 +228,9 @@ datagroups:
                 add: ['Final Energy|Electricity','Final Energy|Electricity|Cooking','Final Energy|Electricity|Heat','Final Energy|Electricity|Transportation','Final Energy|Electricity|Other (excl. Heat, Transport, Cooking)']
             techno:
                 thermal:
-                    add: ['Capacity|Electricity|','Secondary Energy|Electricity|']
-                    mean: ['Variable Cost (incl. Fuel Cost)|Electricity|','Capital Cost|Electricity|','Fixed Cost|Electricity|']
-                    global: ['Emission Rate|CO2|Electricity|','Lifetime|Electricity|']
+                    add: ['Capacity|','Secondary Energy|']
+                    mean: ['Variable Cost (incl. Fuel Cost)|','Capital Cost|','Fixed Cost|']
+                    global: ['Emission Rate|CO2|','Lifetime|']
                 reservoir:
                     add: ['Capacity|Electricity|','Secondary Energy|Electricity|']
                 hydrostorage:
@@ -228,4 +266,3 @@ ScenarioExplorer:
     password: 'pass'
     annual: no
     subannual: no
-
