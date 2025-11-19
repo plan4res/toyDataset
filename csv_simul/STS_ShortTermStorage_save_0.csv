@@ -1,7 +1,0 @@
-Name,Zone,NumberUnits,MaxPower,MaxVolume,TurbineEfficiency,PumpingEfficiency,MinPower,MinVolume,VolumeLevelTarget,CapitalCost,Capacity,FixedCost,AvailabilityRate
-Hydro|Pumped Storage,DolAmroth,1,3302.0,330200.0,0.866,0.866,-3302.0,0,0.0,0.0,3302.0,22500.0,1
-Hydro|Pumped Storage,Harad,1,5920.72,592072.0,0.866,0.866,-5920.72,0,0.0,10.0,5920.72,22500.0,1
-Hydro|Pumped Storage,RoGonDor,1,12150.54,1215053.9999999998,0.866,0.866,-12150.54,0,0.0,10.0,12150.54,22500.0,1
-Battery|Lithium-Ion,DolAmroth,1,18915.3,75661.4,0.95,0.95,-18915.3,0,0.0,0.0,18915.3,280.0,1
-Battery|Lithium-Ion,Harad,1,42246.1,168984.5,0.95,0.95,-42246.1,0,0.0,10.0,42246.1,280.0,1
-Battery|Lithium-Ion,RoGonDor,1,157775.5,631101.9,0.95,0.95,-157775.5,0,0.0,10.0,157775.5,280.0,1
