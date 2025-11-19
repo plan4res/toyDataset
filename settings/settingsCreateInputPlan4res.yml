@@ -116,7 +116,7 @@ ParametersCreate:
         Hydro|Reservoir: 2000
     CapacityExpansion: # define capacity expansion dataset - list of technos which can be invested
         thermal: 
-            Nuclear:  
+            Electricity|Nuclear:  
                 MaxAdd: 30000
                 MaxRet: 0
         battery:
@@ -126,7 +126,7 @@ ParametersCreate:
                 InvestmentCost: 100
         interconnections: # either define the share of maxcapacity which can be added or a list of lines with max added capacity
             Share:  
-                MaxAdd: 0
+                MaxAdd: 100
                 MaxRet: 0 
             InvestmentCost: 100
     conversiondollar2010euro2020: 0.978  # should be the same value than the one used below
@@ -225,7 +225,7 @@ datagroups:
             coupling: 
                 #mean: ['Price|Carbon']
                 flow: ['Network|Electricity|Maximum Flow','Network|Electricity|Expansion Cost','Network|Electricity|Loss Factor']
-                add: ['Final Energy|Electricity','Final Energy|Electricity|Cooking','Final Energy|Electricity|Heat','Final Energy|Electricity|Transportation','Final Energy|Electricity|Other (excl. Heat, Transport, Cooking)']
+                add: ['Final Energy|Electricity','Final Energy|Electricity|Cooking','Final Energy|Electricity|Heating','Final Energy|Electricity|Transportation','Final Energy|Electricity|Other (excl. Heating, Transport, Cooking)']
             techno:
                 thermal:
                     add: ['Capacity|','Secondary Energy|']

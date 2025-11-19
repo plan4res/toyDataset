@@ -1,0 +1,7 @@
+Name,Zone,InvestedCapacity
+Hydro|Pumped Storage,DolAmroth,0
+Hydro|Pumped Storage,Harad,0
+Hydro|Pumped Storage,RoGonDor,0
+Battery|Lithium-Ion,DolAmroth,0
+Battery|Lithium-Ion,Harad,0
+Battery|Lithium-Ion,RoGonDor,0

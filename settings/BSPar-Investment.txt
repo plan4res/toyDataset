@@ -35,7 +35,7 @@ ComputeConfig # exact type of the ComputeConfig object
 
 # now all the integer parameters
 intDoEasy  1      # do easy components for (some) LagBFunction
-intMaxIter 50
+intMaxIter 2
 intMaxThread 6   # MaxThread, max number of new tasks to spawn
 intLogVerb 5      # log verbosity of main Bundle algorithm
 

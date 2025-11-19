@@ -33,12 +33,12 @@ ComputeConfig # exact type of the ComputeConfig object
 7 # number of integer parameters
 
 # now all the integer parameters
-intMaxIter 100
+intMaxIter 3
 
 intLogVerb                1 # log verbosity
 intNStepConv 1
 intPrintTime              1 # Indicates whether computational time should be displayed
-intNbSimulForward         1 # Number of simulations considered in the forward pass
+intNbSimulForward 1
 intOutputFrequency        1
 intNbSimulCheckForConv 	  1   
 
@@ -46,12 +46,12 @@ intNbSimulCheckForConv 	  1
 
 # now all the double parameters
 
-dblAccuracy 0.01
+dblAccuracy 0.2
 
 3 # number of string parameters
 
 # now all the string parameters
-strDirOUT /YOURPATH/data/toyDataset/results_optim/
+strDirOUT /home/plan4res/plan4res/P4RDATA/data/toyDataset/results_optim/
 
 strInnerBSC   uc_solverconfig.txt   # BlockSolverConfig for the UCBlock
 strOutputFile cuts.txt

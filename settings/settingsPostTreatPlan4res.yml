@@ -6,7 +6,7 @@ EndTreatData: '30/06/2031 23:00'
 
 # directories
 # dir: for reading results of plan4res : 
-Resultsdir: 'results_invest/' 
+Resultsdir: "results_invest/"
 # defines how results files are names (eg Demand$i.csv or Demand_Scen$i_OUT.csv for the demand at scenario $i_OUT
 ScenarioIdentifier: _Scen$i_OUT                                                                                                                
 
@@ -124,7 +124,7 @@ namereport: 'toyDataset with investments'
 titlereport: 'Report about toyDataset with investments'
 
 # if bellman value is to be computed (file BellmanOUT.csv in inputs): yes, else: no
-usevu: yes
+usevu: no
 # SSVTimeStep number in BellmanOUT.csv corresponding to plot_end
 timestepvusms: 11
 # figures are rounded: 1, not rounded: 0
@@ -143,17 +143,17 @@ pielimit: 0.001
 # startcost= Start-Up cost Euro
 
 Technos:
-    Geothermal:
+    Electricity|Geothermal:
         color: '#8FA600'
     Hydro|Run of River: 
         color: '#74DBDA'
-    Nuclear:
+    Electricity|Nuclear:
         color: '#FFAA00'
-    Coal|Hard coal|w/o CCS:
+    Electricity|Coal|Hard coal|w/o CCS:
         color: '#0D0D0D'
-    Coal|Hard coal|w/ CCS:  
+    Electricity|Coal|Hard coal|w/ CCS:  
         color: '#4D4F4F'
-    Coal|Lignite|w/o CCS:
+    Electricity|Coal|Lignite|w/o CCS:
         color: '#2F3030'
     Wind|Offshore:
         color: '#2BFF00'
@@ -183,19 +183,19 @@ Technos:
         color: '#FFFF00'
     Solar|PV|Rooftop|Residential:
         color: '#FFFF00'                 
-    Biomass|w/ CCS:
+    Electricity|Biomass|w/ CCS:
         color: '#608000'
-    Biomass|w/o CCS:
+    Electricity|Biomass|w/o CCS:
         color: '#608000'
-    Hydrogen|OCGT:
+    Electricity|Hydrogen|OCGT:
         color: '#DF785B'
-    Gas|CCGT|w/ CCS:
+    Electricity|Gas|CCGT|w/ CCS:
         color: '#FF0000'
-    Gas|CCGT|w/o CCS:
+    Electricity|Gas|CCGT|w/o CCS:
         color: '#B30000'
-    Gas|OCGT|w/o CCS:
+    Electricity|Gas|OCGT|w/o CCS:
         color: '#E00000'
-    Oil|w/o CCS:
+    Electricity|Oil|w/o CCS:
         color: '#4F0000'
     Hydro|Reservoir:
         color: '#0000FF'
@@ -230,7 +230,7 @@ technosAggr:
         color: blue
         colors: Blues
     Geothermal: 
-        technos: ['Geothermal']
+        technos: ['Electricity|Geothermal']
         color: olive
         colors: Greens
     WindPower:
@@ -242,23 +242,23 @@ technosAggr:
         color: yellow
         colors: YlOrRd
     Biomass: 
-        technos: ['Biomass|w/ CCS','Biomass|w/o CCS']
+        technos: ['Electricity|Biomass|w/ CCS','Electricity|Biomass|w/o CCS']
         color: darkkhaki
         colors: Greens
     Nuclear:
-        technos: ['Nuclear']
+        technos: ['Electricity|Nuclear']
         color: orange
         colors: Oranges
     Hydrogen:
-        technos: ['Hydrogen|OCGT']
+        technos: ['Electricity|Hydrogen|OCGT']
         color: salmon
         colors: RdPu
     Coal:
-        technos: ['Coal|Hard coal|w/o CCS','Coal|Hard coal|w/ CCS','Coal|Lignite|w/o CCS']
+        technos: ['Electricity|Coal|Hard coal|w/o CCS','Electricity|Coal|Hard coal|w/ CCS','Electricity|Coal|Lignite|w/o CCS']
         color: black
         colors: Greys
     Gaz:
-        technos: ['Gas|CCGT|w/o CCS','Gas|CCGT|w/ CCS','Gas|OCGT|w/o CCS']
+        technos: ['Electricity|Gas|CCGT|w/o CCS','Electricity|Gas|CCGT|w/ CCS','Electricity|Gas|OCGT|w/o CCS']
         color: firebrick
         colors: Reds
     Battery: 
@@ -270,7 +270,7 @@ technosAggr:
         color: magenta
         colors: Purples
     Oil:
-        technos: ['Oil|w/o CCS']
+        technos: ['Electricity|Oil|w/o CCS']
         color: saddlebrown
         colors: Greys
     Non Served:

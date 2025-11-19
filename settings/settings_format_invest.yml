@@ -32,7 +32,7 @@ FormatVU: Polyhedral
 # IncludeVU= None : no bellman values are used as input
 # IncludeVU= Last :  water values included only in the last Block
 # IncludeVU= All :  water values included in all blocks
-IncludeVU: All
+IncludeVU: None
 
 # the variable Invest defines if additionnal constraints are created for the investment optimisation
 # Invest= Simple : no additional constraints are created
@@ -70,7 +70,7 @@ ParametersFormat:
     NumberHoursInYear: 8760
     InertiaMultFactor: 1.2 # mult factor for computing inertia contributions
     # list of scenarios to include in the instance (names of scenarios)
-    Scenarios: ['Base'] # list of scenarios to include in the instance (names of scenarios)
+    Scenarios: ['Base','PVminus10','Demandplus10','PVminus10AndDemandplus10'] # list of scenarios to include in the instance (names of scenarios)
 
     # ScenarisedData contains the list of scenarised data, among 'ActivePowerDemand','Hydro:Inflows','Renewable:MaxPowerProfile' and 'Thermal:MaxPowerProfile'
     ScenarisedData: 

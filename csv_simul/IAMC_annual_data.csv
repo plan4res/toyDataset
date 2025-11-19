@@ -31,8 +31,8 @@ GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Capital Cost|Electricity|Wind|Onsho
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Capital Cost|Electricity|Wind|Onshore|Opt,EUR/MW,915000.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Final Energy|Electricity,MWh/yr,75356752.03523976
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Final Energy|Electricity|Cooking,MWh/yr,7178950.6520659365
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Final Energy|Electricity|Heat,MWh/yr,54635950.12624636
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,"Final Energy|Electricity|Other (excl. Heat, Transport, Cooking)",MWh/yr,51369219.81207704
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Final Energy|Electricity|Heating,MWh/yr,54635950.12624636
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,"Final Energy|Electricity|Other (excl. Heating, Transport, Cooking)",MWh/yr,51369219.81207704
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Final Energy|Electricity|Transportation,MWh/yr,13541851.256927447
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Fixed Cost|Electricity|Battery|Lithium-Ion,EUR/MW/yr,280.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,DolAmroth,Fixed Cost|Electricity|Biomass|w/o CCS,EUR/MW/yr,35000.0
@@ -126,8 +126,8 @@ GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Capital Cost|Electricity|Wind|Onshore|A
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Capital Cost|Electricity|Wind|Onshore|Opt,EUR/MW,915000.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Final Energy|Electricity,MWh/yr,730006229.6021111
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Final Energy|Electricity|Cooking,MWh/yr,23410354.811436728
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Final Energy|Electricity|Heat,MWh/yr,142911973.09764126
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,"Final Energy|Electricity|Other (excl. Heat, Transport, Cooking)",MWh/yr,485704581.10405695
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Final Energy|Electricity|Heating,MWh/yr,142911973.09764126
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,"Final Energy|Electricity|Other (excl. Heating, Transport, Cooking)",MWh/yr,485704581.10405695
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Final Energy|Electricity|Transportation,MWh/yr,77979320.58897637
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Fixed Cost|Electricity|Battery|Lithium-Ion,EUR/MW/yr,280.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,Harad,Fixed Cost|Electricity|Biomass|w/o CCS,EUR/MW/yr,35000.0
@@ -222,8 +222,8 @@ GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Capital Cost|Electricity|Wind|Onshor
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Capital Cost|Electricity|Wind|Onshore|Opt,EUR/MW,915000.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Final Energy|Electricity,MWh/yr,1546788005.1302078
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Final Energy|Electricity|Cooking,MWh/yr,172457328.9716006
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Final Energy|Electricity|Heat,MWh/yr,588625849.4168997
-GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,"Final Energy|Electricity|Other (excl. Heat, Transport, Cooking)",MWh/yr,519508105.26119334
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Final Energy|Electricity|Heating,MWh/yr,588625849.4168997
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,"Final Energy|Electricity|Other (excl. Heating, Transport, Cooking)",MWh/yr,519508105.26119334
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Final Energy|Electricity|Transportation,MWh/yr,266196721.48051393
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Fixed Cost|Electricity|Battery|Lithium-Ion,EUR/MW/yr,280.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,RoGonDor,Fixed Cost|Electricity|Biomass|w/o CCS,EUR/MW/yr,35000.0
@@ -281,6 +281,11 @@ GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Emission Rate|CO2|Electricity|Coal|Lign
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Emission Rate|CO2|Electricity|Gas|CCGT|w/o CCS,tons/MWh,0.34634482757928
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Emission Rate|CO2|Electricity|Gas|OCGT|w/o CCS,tons/MWh,0.5286315788733601
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Emission Rate|CO2|Electricity|Oil|w/o CCS,tons/MWh,0.7010526314808001
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Biomass|w/o CCS,-,31.0
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Coal|Hard coal|w/o CCS,-,25.0
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Coal|Lignite|w/o CCS,-,25.0
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Gas|CCGT|w/o CCS,-,26.0
+GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Oil|w/o CCS,-,31.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Solar|PV|Utility|Average,-,35.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Solar|PV|Utility|Inf,-,35.0
 GENeSYS-MOD 3.2,LoR_Madrid_Cooking,World,Lifetime|Electricity|Solar|PV|Utility|Opt,-,35.0
